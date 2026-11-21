@@ -28,7 +28,7 @@ jobs:
       - name: Build debug APK
         run: gradle --no-daemon assembleDebug
       - name: Build diagnostic APK
-        run: gradle --no-daemon assembleDiagnosticDebug
+        run: gradle --no-daemon :diagnostic:assembleDebug
       - name: Verify diagnostic APK
         run: |
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose diagnostic/build/outputs/apk/debug/diagnostic-debug.apk
